@@ -1,0 +1,30 @@
+[
+    {
+        "_id": "product Id",
+        "name": "nombre",
+        "price": 45,
+        "description": "description",
+        "image": "url",
+        "sellerId": "ObjectId Mongo",
+        "location": "location",
+        "delivery": "delivery",
+        "sales": "sales",
+        "season": "season",
+        "stock": "stock",
+        "payment": "payment"
+    },
+    {
+        "_id": "product Id",
+        "name": "nombre",
+        "price": 45,
+        "description": "description",
+        "image": "url",
+        "sellerId": "ObjectId Mongo",
+        "location": "location",
+        "delivery": "delivery",
+        "sales": "sales",
+        "season": "season",
+        "stock": "stock",
+        "payment": "payment"
+    }
+]

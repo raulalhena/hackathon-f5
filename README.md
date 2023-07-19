@@ -2,7 +2,7 @@
 
 Plataforma destinada a la venta de productos de granjas y huertas sin intermediarios. De la granja a tu mesa.
 
-Mediante la creación de anuncios en Local Harvest los propietarios de granjas y huertas pueden vender sus productos directamente al consumidor final, ya sea venta directa o venta a domicilio.
+Mediante la creación de anuncios en Local Harvest los propietarios de granjas y huertas pueden vender sus productos directamente al consumidor final, ya sea venta directa o venta a domicilio..
 
 ## Misión, Visión y Valores de Local Harvest
 

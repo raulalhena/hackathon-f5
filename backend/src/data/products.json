@@ -1,0 +1,32 @@
+[
+    {
+        "_id": "1",
+        "name": "Tomate de Barbastro",
+        "price": 45,
+        "description": "description",
+        "image": "url",
+        "sellerId": "ObjectId Mongo",
+        "location": "location",
+        "delivery": "delivery",
+        "season": "season",
+        "stock": "stock",
+        "payment": "payment",
+        "category": "category",
+        "units": "kg | units | g"
+    },
+    {
+        "_id": "2",
+        "name": "nombre",
+        "price": 45,
+        "description": "description",
+        "image": "url",
+        "sellerId": "ObjectId Mongo",
+        "location": "location",
+        "delivery": "delivery",
+        "season": "season",
+        "stock": "stock",
+        "payment": "payment",
+        "category": "category",
+        "units": "kg | units | g"
+    }
+]

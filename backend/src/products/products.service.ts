@@ -13,6 +13,31 @@ export class ProductsService {
     return products;
   }
 
+  sortArray(array, sorted) {
+    const sorting = {
+      createdAt() {
+        return array.sort((a, b) => {
+          const ad: any = new Date(a.createdAt);
+          const bd: any = new Date(b.createdAt);
+    
+          return ad - bd;
+        });
+      },
+      price() {
+        return array.sort((a, b) => a.price - b.price);
+      }
+    }
+    return sorting[sorted]();
+  }
+
+  search(filter: string, keyword: string, sorted: string) {
+    const regex = RegExp(keyword, 'i');
+    let filteredProducts = products.filter(product => product.name.match(regex) || product.description.match(regex));
+    const filters = filter.split(',');
+    if(sorted) filteredProducts = this.sortArray(filteredProducts, sorted);
+    return filteredProducts;
+  }
+
   findOne(id: string) {
     return products.filter(product => product._id === id);
   }

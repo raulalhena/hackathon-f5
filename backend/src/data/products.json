@@ -6,7 +6,41 @@
         "description": "description",
         "image": "url",
         "sellerId": "ObjectId Mongo",
-        "createdAt": "05-25-2023",
-        "updatedAt": "05-25-2023"
+        "category": "Hortalizas",
+        "createdAt": "2023-05-25",
+        "updatedAt": "2023-05-25"
+    },
+    {
+        "_id": "2",
+        "name": "Pera conference",
+        "price": 35,
+        "description": "description",
+        "image": "url",
+        "sellerId": "ObjectId Mongo",
+        "category": "Fruta",
+        "createdAt": "2022-05-25",
+        "updatedAt": "2022-05-25"
+    },
+    {
+        "_id": "4",
+        "name": "Mermelada de fresa",
+        "price": 15,
+        "description": "description",
+        "image": "url",
+        "sellerId": "ObjectId Mongo",
+        "category": "Mermeladas",
+        "createdAt": "2022-05-20",
+        "updatedAt": "2022-05-20"
+    },
+    {
+        "_id": "5",
+        "name": "Manchego de obeja",
+        "price": 55,
+        "description": "description",
+        "image": "url",
+        "sellerId": "ObjectId Mongo",
+        "category": "Quesos",
+        "createdAt": "2022-06-20",
+        "updatedAt": "2022-06-20"
     }
 ]

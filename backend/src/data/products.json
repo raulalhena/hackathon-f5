@@ -8,10 +8,11 @@
         "sellerId": "ObjectId Mongo",
         "location": "location",
         "delivery": "delivery",
-        "sales": "sales",
         "season": "season",
         "stock": "stock",
-        "payment": "payment"
+        "payment": "payment",
+        "category": "category",
+        "units": "kg | units | g"
     },
     {
         "_id": "product Id",
@@ -22,9 +23,10 @@
         "sellerId": "ObjectId Mongo",
         "location": "location",
         "delivery": "delivery",
-        "sales": "sales",
         "season": "season",
         "stock": "stock",
-        "payment": "payment"
+        "payment": "payment",
+        "category": "category",
+        "units": "kg | units | g"
     }
 ]

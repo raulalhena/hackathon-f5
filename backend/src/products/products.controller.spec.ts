@@ -55,7 +55,8 @@ describe('ProductsController', () => {
   xit('search() should return the products filtered and sorted', async () => {
     const filter = 'createdAt';
     const keyword = 'Rosa';
+    const sorted = 'price'
 
-    expect(await controller.search(filter, keyword)).toMatchObject(products[1]);
+    expect(await controller.search(filter, keyword, sorted)).toMatchObject(products[1]);
   });
 });

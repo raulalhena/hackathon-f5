@@ -6,7 +6,7 @@ import * as products from "../data/products.json";
 @Injectable()
 export class ProductsService {
   create(createProductDto: CreateProductDto) {
-    return 'This action adds a new product';
+    return createProductDto;
   }
 
   findAll() {
@@ -32,7 +32,7 @@ export class ProductsService {
 
   search(filter: string, keyword: string, sorted: string) {
     const regex = RegExp(keyword, 'i');
-    let filteredProducts = products.filter(product => product.name.match(regex) || product.description.match(regex));
+    let filteredProducts = products.filter(product => product[filter].match(regex) || product.description.match(regex));
     const filters = filter.split(',');
     if(sorted) filteredProducts = this.sortArray(filteredProducts, sorted);
     return filteredProducts;

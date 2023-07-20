@@ -4,7 +4,7 @@
         "name": "Tomate de Barbastro",
         "price": 45,
         "description": "description",
-        "image": "url",
+        "image": "https://i.postimg.cc/wMsgsXwD/verduras1.jpg",
         "sellerId": "ObjectId Mongo",
         "category": "Hortalizas",
         "createdAt": "2023-05-25",

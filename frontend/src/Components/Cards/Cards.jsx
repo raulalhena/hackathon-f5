@@ -3,21 +3,9 @@
 import React, { useContext} from 'react';
 import { ProductContext } from '../../Data/ProductContext';
 import { Link } from 'react-router-dom';
+import Product from '../Product/Product.jsx';
+import './Cards.css'
 
-
-export const Product = ({ product}) => {
-    const { name, image, price } = product;
-
-    return (
-
-        <div className="cards"> 
-        <Link to={`/products/${product.id}`}><img src={image} alt={name} /></Link>
-        <Link to={`/products/${product.id}`}><h2>{name}</h2></Link>
-        <p>${price}</p>
-        </div>
-
-    );
-};
 
 const Cards = () => {
 const {allProducts, filteredProducts} = useContext(ProductContext)
@@ -30,7 +18,7 @@ const {allProducts, filteredProducts} = useContext(ProductContext)
                 <>
                 {filteredProducts.map((product) => (
                     <Product
-                    // key={product.id}
+                    key={product.id}
                     product={product}
                     />
                 ))}
@@ -39,7 +27,7 @@ const {allProducts, filteredProducts} = useContext(ProductContext)
                 <>
                 {allProducts.map((product) => (
                     <Product
-                    // key={product.id}
+                    key={product.id}
                     product={product}
                     />
                 ))}

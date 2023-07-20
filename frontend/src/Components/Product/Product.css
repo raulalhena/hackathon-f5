@@ -1,0 +1,26 @@
+.cards{
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    max-width: 500px;
+    min-width: 300px;
+    max-height: 300px;
+    min-height: 250px;
+    background-color: aquamarine;
+}
+
+.img{
+
+}
+
+h2{
+    text-align: center;
+    text-decoration: none;
+    font-size: larger;
+}
+
+p{
+    text-align: center;
+    text-decoration: none;
+    font-size: larger;
+}

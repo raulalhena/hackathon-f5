@@ -1,6 +1,8 @@
 
 import React, { useContext} from 'react';
 import { ProductContext } from '../../Data/ProductContext';
+import { Link } from 'react-router-dom';
+import './Product.css'
 
 const Product = ({ product}) => {
     const { name, image, price } = product;
@@ -8,9 +10,9 @@ const Product = ({ product}) => {
     return (
 
         <div className="cards"> 
-        <Link to={`/products/${product.id}`}><img src={image} alt={name} /></Link>
-        <Link to={`/products/${product.id}`}><h2>{name}</h2></Link>
-        <p>${price}</p>
+        <Link to={`/products/${product.id}`}><img className='img' src={image} alt={name} /></Link>
+        <h2 className='name'>{name}</h2>
+        <p className='price'>${price}</p>
         </div>
 
     );

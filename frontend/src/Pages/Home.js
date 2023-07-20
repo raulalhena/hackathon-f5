@@ -1,13 +1,12 @@
-
+import Header from "../Components/Header/Header";
 
 
 
 const Home = () => {
 
     return (
-        <div>
-            hola mundo
-        </div>
+        <Header></Header>
+        
     )
 }
 

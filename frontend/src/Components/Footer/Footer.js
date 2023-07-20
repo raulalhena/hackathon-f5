@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import LogoTwitter from '../../assets/twitter.svg'
+import LogoFacebook from '../../assets/facebook.svg'
 import './footer.css';
 
 const Buttons = () => {

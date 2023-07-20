@@ -3,6 +3,7 @@ import { ProductsController } from './products.controller';
 import { ProductsService } from './products.service';
 import * as products from '../data/products.json';
 import { HttpStatus } from '@nestjs/common';
+import { CreateProductDto } from './dto/create-product.dto';
 
 const filterdDescriptionSortedPrice = [
     {
@@ -51,6 +52,18 @@ const filterdDescriptionSortedPrice = [
     }
   ];
 
+const newProduct = {
+  _id: String(+products.at(-1)._id + 1),
+  name: 'Patatas monalisa',
+  price: 45,
+  description: 'Patata con mucho arte',
+  image: 'https://github.com/',
+  sellerId: '454848',
+  category: 'Tuberculos',
+  createdAt: new Date().toLocaleDateString('sv'),
+  updatedAt: new Date().toLocaleDateString('sv')
+}
+
 describe('ProductsController', () => {
   let controller: ProductsController;
 
@@ -90,7 +103,19 @@ describe('ProductsController', () => {
           message: 'Products retrieved succesfully',
           data: filteredProducts
         } 
-    })
+    }),
+    create: jest.fn().mockImplementation((createProductDto: CreateProductDto) => {
+      return Promise.resolve({
+          status: HttpStatus.OK,
+          message: 'Se ha creado el anuncio con éxito',
+          data: {
+            _id: String(+products.at(-1)._id + 1),
+            ...createProductDto,
+            createdAt: new Date().toLocaleDateString('sv'),
+            updatedAt: new Date().toLocaleDateString('sv')
+          }
+      }
+    )})
   }
 
   beforeEach(async () => {
@@ -109,7 +134,6 @@ describe('ProductsController', () => {
     expect(controller).toBeDefined();
   });
 
-  // Test de la función findAll(), devuelve todos los objetos de la base de datos
   it('findAll() should return all the products', async () => {
     expect(await controller.findAll()).toMatchObject(products);
   });
@@ -137,4 +161,21 @@ describe('ProductsController', () => {
       data: filterdDescriptionSortedPrice
     });
   });
+
+  it('create() should return a standard object with the created product', async() => {
+    const createProductDto: CreateProductDto = {
+      name: 'Patatas monalisa',
+      price: 45,
+      description: 'Patata con mucho arte',
+      image: 'https://github.com/',
+      sellerId: '454848',
+      category: 'Tuberculos'
+    }
+
+    expect(await controller.create(createProductDto)).toMatchObject({
+        status: HttpStatus.OK,
+        message: 'Se ha creado el anuncio con éxito',
+        data: newProduct
+    });
+  })
 });

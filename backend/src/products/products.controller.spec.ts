@@ -69,6 +69,7 @@ describe('ProductsController', () => {
 
   const mockProductsService = {
     findAll: jest.fn().mockReturnValue(Promise.resolve(products)),
+    findOne: jest.fn().mockReturnValue(Promise.resolve(products[1])),
     sortProducts: jest.fn().mockImplementation((products, sortedBy: string) => {
       const sorting = {
         createdAt() {
@@ -138,6 +139,11 @@ describe('ProductsController', () => {
     expect(await controller.findAll()).toMatchObject(products);
   });
 
+  it('findOne() should return a product object that match with id provided', async () => {
+    const id = '2';
+    expect(await controller.findOne(id)).toMatchObject(products[1]);
+  });
+
   it('search() should return the products filtered', async () => {
     const filteredBy = 'name';
     const keyword = 'Conference';
@@ -177,5 +183,5 @@ describe('ProductsController', () => {
         message: 'Se ha creado el anuncio con éxito',
         data: newProduct
     });
-  })
+  });
 });

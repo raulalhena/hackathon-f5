@@ -1,12 +1,10 @@
 import React from "react";
-import Heartfav from "../Components/heart_fav/Heart";
-import Header from "../header/Header";
+import FavoriteButton from "../Components/heart_fav/FavoriteButton";
 
 const Home = () => {
   return (
     <div>
-      <Header />
-      <Heartfav />
+      <FavoriteButton />
     </div>
   );
 };

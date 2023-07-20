@@ -1,4 +1,4 @@
-
+import SearchBar from "../Components/SearchBar";
 
 
 
@@ -6,7 +6,7 @@ const Home = () => {
 
     return (
         <div>
-            hola mundo
+            <SearchBar/>
         </div>
     )
 }

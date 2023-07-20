@@ -4,16 +4,13 @@ import { UpdateProductDto } from './dto/update-product.dto';
 import * as productsObj from "../data/products.json";
 import { EventEmitter2, OnEvent } from '@nestjs/event-emitter';
 import { ProductCreatedEvent } from '../events/created.product.event';
-import { EventsService } from 'src/modelevents/events.service';
 
 const products = Array.from(productsObj);
 
 @Injectable()
 export class ProductsService {
 
-  constructor(private readonly eventEmitter: EventEmitter2,
-    private readonly eventsService: EventsService
-    ) {}
+  constructor(private readonly eventEmitter: EventEmitter2) {}
 
   create(createProductDto: CreateProductDto) {
     const newProduct = {

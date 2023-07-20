@@ -1,0 +1,73 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(44, 172, 89) ;
+    text-align: center;
+    padding: 1rem 9.8rem;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-link{
+    text-decoration: none;;
+}
+.logo-title {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: white;
+  }
+
+
+.logo {
+    width: 70px;
+    height: 70px;
+}
+
+
+.button-container {
+    display: flex;
+}
+
+.header-button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: none;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    font-size: 20px;
+    text-decoration: none;
+    /* margin-top: 2rem; */
+}
+
+
+
+@media only screen and (min-width: 601px) and (max-width: 991px){
+
+    .header{
+        padding: 2rem 3rem;
+    }
+
+}
+@media only screen and (max-width: 600px) {
+
+    .header{
+        padding: 1rem;
+    }
+
+}
+.logo-title {
+    font-size: 1.2rem;
+}
+
+
+
+
+

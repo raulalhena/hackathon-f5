@@ -1,0 +1,62 @@
+footer {
+    width: 80%;
+    height: 5%;
+    position: fixed;
+    bottom: 0;
+    background-color: rgb(44, 172, 89);
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 1rem;
+    text-align: left;
+    padding: 1rem 10rem;
+    justify-content: space-between;
+}
+
+.rs-button, .t-button{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.Footer-Left {
+    display: flex;
+    gap: 1rem;
+}
+
+.Footer-Right {
+    display: flex;
+    gap: 1rem;
+}
+
+.logoRs {
+    width: 15px;
+    margin-right: 0.5rem;
+  }
+
+@media only screen and (min-width: 601px) and (max-width: 991px) {
+    .footer{
+    width: 100vw;
+    }
+
+
+}
+
+@media only screen and (max-width: 600px){
+
+    .footer{
+    width: 100%;
+    font-size: 1rem;
+    justify-content: space-between;
+    padding: 1.5rem 1rem;
+    }
+
+.facebook, .twitter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+}

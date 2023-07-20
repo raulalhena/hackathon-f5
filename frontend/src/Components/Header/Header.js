@@ -17,7 +17,7 @@ const Buttons = () => {
   return (
     <div className="button-container">
       <Link to="/" className="header-button">Regístrate</Link>
-      <Link to="/" className="header-button">Carro</Link>
+      <Link to="/" className="header-button">Información</Link>
     </div>
   );
 };

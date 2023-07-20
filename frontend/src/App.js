@@ -6,10 +6,7 @@ import Home from './Pages/Home';
 import ProductDetail from './Pages/ProductDetail';
 import { DataContext } from './Data/DataContexProvider';
 
-
-
-function App() {
-
+function App() {  
 
   return (
     <Router>

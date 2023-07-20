@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpStatus, Injectable } from '@nestjs/common';
 import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
 import * as products from "../data/products.json";
@@ -13,13 +13,13 @@ export class ProductsService {
     return products;
   }
 
-  sortArray(array, sorted) {
+  sortArray(array, sortedBy) {
     const sorting = {
       createdAt() {
         return array.sort((a, b) => {
           const ad: any = new Date(a.createdAt);
           const bd: any = new Date(b.createdAt);
-    
+
           return ad - bd;
         });
       },
@@ -27,15 +27,30 @@ export class ProductsService {
         return array.sort((a, b) => a.price - b.price);
       }
     }
-    return sorting[sorted]();
+    return sorting[sortedBy]();
   }
 
-  search(filter: string, keyword: string, sorted: string) {
-    const regex = RegExp(keyword, 'i');
-    let filteredProducts = products.filter(product => product[filter].match(regex) || product.description.match(regex));
-    const filters = filter.split(',');
-    if(sorted) filteredProducts = this.sortArray(filteredProducts, sorted);
-    return filteredProducts;
+  search(filteredBy: string, keyword: string, sortedBy: string) {
+    try{
+      const regex = RegExp(keyword, 'i');
+      let filteredProducts = products;
+
+      if(filteredBy){
+        const filters = filteredBy.split(',');
+        filters.forEach(filter => {
+          filteredProducts = products.filter(product => product[filter].match(regex));
+        }); 
+      }
+      
+      if(sortedBy) filteredProducts = this.sortArray(filteredProducts, sortedBy);
+      return {
+        status: HttpStatus.OK,
+        message: 'Products retrieved succesfully',
+        data: filteredProducts
+      } 
+    }catch(e) {
+      throw new Error('Error ocurred while searching')
+    }
   }
 
   findOne(id: string) {

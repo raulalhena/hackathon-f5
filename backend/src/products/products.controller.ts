@@ -18,8 +18,8 @@ export class ProductsController {
   }
 
   @Get('search') 
-  search(@Query('filter') filter: string, @Query('keyword') keyword: string, @Query('sorted') sorted: string) {
-    return this.productsService.search(filter, keyword, sorted);
+  search(@Query('filteredBy') filteredBy: string, @Query('keyword') keyword: string, @Query('sortedBy') sortedBy: string) {
+    return this.productsService.search(filteredBy, keyword, sortedBy);
   }
 
   @Get(':id')

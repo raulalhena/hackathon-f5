@@ -1,5 +1,3 @@
-
-
 import React, { useContext} from 'react';
 import { ProductContext } from '../../Data/ProductContext';
 import { Link } from 'react-router-dom';
@@ -34,9 +32,7 @@ const {allProducts, filteredProducts} = useContext(ProductContext)
                 </>
             )
             } 
-        
-        </div>
-        
+        </div> 
     )
 };
 

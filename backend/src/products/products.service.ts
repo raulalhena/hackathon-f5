@@ -13,10 +13,10 @@ export class ProductsService {
     return products;
   }
 
-  sortProducts(array, sortedBy) {
+  sortProducts(products, sortedBy) {
     const sorting = {
       createdAt() {
-        return array.sort((a, b) => {
+        return products.sort((a, b) => {
           const ad: any = new Date(a.createdAt);
           const bd: any = new Date(b.createdAt);
 
@@ -24,7 +24,7 @@ export class ProductsService {
         });
       },
       price() {
-        return array.sort((a, b) => a.price - b.price);
+        return products.sort((a, b) => a.price - b.price);
       }
     }
     return sorting[sortedBy]();
@@ -39,7 +39,7 @@ export class ProductsService {
         const filters = filteredBy.split(',');
         filters.forEach(filter => {
           filteredProducts = products.filter(product => product[filter].match(regex));
-        }); 
+        });
       }
       
       if(sortedBy) filteredProducts = this.sortProducts(filteredProducts, sortedBy);

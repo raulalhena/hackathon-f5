@@ -1,14 +1,16 @@
 
 import './App.css';
-import React, { useContext } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home';
+<<<<<<< HEAD
 import { DataContext } from './Data/DataContexProvider';
+=======
+import ProductDetail from './Pages/ProductDetail';
+>>>>>>> 48b9e28f847cc80e5f8b68a1c4320eb0f548337b
 
 
-
-function App() {
-
+function App() {  
 
   return (
     <Router>

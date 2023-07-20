@@ -1,5 +1,5 @@
 
-
+import Prueba from "../Components/Prueba";
 
 
 const Home = () => {
@@ -7,6 +7,7 @@ const Home = () => {
     return (
         <div>
             hola mundo
+            <Prueba />
         </div>
     )
 }

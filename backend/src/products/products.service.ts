@@ -13,7 +13,7 @@ export class ProductsService {
     return products;
   }
 
-  sortArray(array, sortedBy) {
+  sortProducts(array, sortedBy) {
     const sorting = {
       createdAt() {
         return array.sort((a, b) => {
@@ -42,7 +42,7 @@ export class ProductsService {
         }); 
       }
       
-      if(sortedBy) filteredProducts = this.sortArray(filteredProducts, sortedBy);
+      if(sortedBy) filteredProducts = this.sortProducts(filteredProducts, sortedBy);
       return {
         status: HttpStatus.OK,
         message: 'Products retrieved succesfully',

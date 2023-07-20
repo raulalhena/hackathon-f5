@@ -1,10 +1,10 @@
 
 import './App.css';
-import React, { useContext } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home';
 import ProductDetail from './Pages/ProductDetail';
-import { DataContext } from './Data/DataContexProvider';
+
 
 function App() {  
 

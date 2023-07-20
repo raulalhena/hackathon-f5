@@ -1,9 +1,7 @@
 
-import React, { useContext} from 'react';
-import { ProductContext } from '../../Data/ProductContext';
 import { Link } from 'react-router-dom';
 
-export const Product = ({ product}) => {
+const Product = ({ product}) => {
     const { name, image, price } = product;
 
     return (

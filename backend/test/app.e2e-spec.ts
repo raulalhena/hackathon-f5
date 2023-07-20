@@ -21,4 +21,11 @@ describe('AppController (e2e)', () => {
       .expect(200)
       .expect('Hello World!');
   });
+
+  it('/products GET should return all the products', async () => {
+    const response = await request(app.getHttpServer()).get('/products');
+
+    expect(response.statusCode).toBe(200);
+    // expect(response.body).toMatchObject(data);
+  })
 });

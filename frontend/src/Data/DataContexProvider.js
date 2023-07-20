@@ -16,7 +16,7 @@ export const ProductProvider = ({ children }) => {
         fetch('http://localhost:4000/products/search?filteredBy=&keyword=&sortedBy=createdAt')
         .then((response) => response.json())
         .then((data) => {
-            const productsData = data.map((item) => ({
+            const productsData = data.data.map((item) => ({
                 id: item._id,
                 name: item.name,
                 price: item.price,

@@ -1,12 +1,31 @@
 import { HttpStatus, Injectable } from '@nestjs/common';
 import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
-import * as products from "../data/products.json";
+import * as productsObj from "../data/products.json";
+import { EventEmitter2, OnEvent } from '@nestjs/event-emitter';
+import { ProductCreatedEvent } from '../events/created.product.event';
+
+const products = Array.from(productsObj);
 
 @Injectable()
 export class ProductsService {
+
+  constructor(private readonly eventEmitter: EventEmitter2) {}
+
   create(createProductDto: CreateProductDto) {
-    return createProductDto;
+    const newProduct = {
+      _id: String(+products.at(-1)._id + 1),
+      ...createProductDto,
+      createdAt: new Date().toLocaleDateString('sv'),
+      updatedAt: new Date().toLocaleDateString('sv')
+    }
+    products.push(newProduct);
+    this.eventEmitter.emit(`created.${createProductDto.category}`);
+    return {
+      status: HttpStatus.OK,
+      message: 'Se ha creado el anuncio con éxito',
+      data: newProduct
+    };
   }
 
   findAll() {

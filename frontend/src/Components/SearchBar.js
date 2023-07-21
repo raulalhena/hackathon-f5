@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './SearchBar.css';
 import Product from './Product/Product';
 import Cards from './Cards/Cards';

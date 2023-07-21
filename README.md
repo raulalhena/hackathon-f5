@@ -7,6 +7,9 @@ ______________________
    </p>
 </p>
 
+## Contexto:
+
+Este es un proyecto realizado en la Hackaton de factoria F5 20 y 21 de julio de 2023. Realizado en el transcurso de 2 días.
 ## Descripción
 Plataforma destinada a la venta de productos de granjas y huertas sin intermediarios. De la granja a tu mesa.
 
@@ -34,7 +37,7 @@ Los valores de una empresa que vende productos de granjas que hemos definido son
 - Seguridad alimentaria: Priorizar la seguridad y la higiene alimentaria en todas las etapas de la producción y distribución de los productos de granja.
 - Aprecio por la tradición: Respetar y valorar las prácticas y tradiciones agrícolas locales. Reconocer la importancia de preservar el conocimiento agrícola ancestral.
 
-## Equipo
+## Hackathon F5 - Equipo
 
         Soledad - Developer
         Ana Lucía Silva - Product Owner
@@ -77,7 +80,6 @@ Aplicación web
 <img src="https://profilinator.rishav.dev/skills-assets/javascript-original.svg" alt="JavaScript" height="35" />
 <img src="https://profilinator.rishav.dev/skills-assets/react-original-wordmark.svg" alt="React" height="35" />
 <img src="https://d33wubrfki0l68.cloudfront.net/e937e774cbbe23635999615ad5d7732decad182a/26072/logo-small.ede75a6b.svg" alt="Nest" height="35" </div>
-
 
 ## Herramientas
 

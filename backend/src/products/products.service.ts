@@ -1,6 +1,5 @@
 import { HttpStatus, Injectable } from '@nestjs/common';
 import { CreateProductDto } from './dto/create-product.dto';
-import { UpdateProductDto } from './dto/update-product.dto';
 import * as productsObj from "../data/products.json";
 import { EventEmitter2, OnEvent } from '@nestjs/event-emitter';
 import { ProductCreatedEvent } from '../events/created.product.event';

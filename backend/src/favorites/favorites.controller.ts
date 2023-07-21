@@ -19,7 +19,7 @@ export class FavoritesController {
 
     @Patch('categories')
     add(@Body() createFavoriteDto: CreateFavoriteDto) {
-        return this.favoritesService.add(createFavoriteDto)
+        return this.favoritesService.add(createFavoriteDto);
     }
 
     @Get(':id')

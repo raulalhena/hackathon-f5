@@ -19,6 +19,11 @@ export class FavoritesService {
                     };
                 }
             }
+            return {
+                status: HttpStatus.BAD_REQUEST,
+                message: 'Something went wrong saving your favorite',
+                data: ''
+            };
         });
     }
 

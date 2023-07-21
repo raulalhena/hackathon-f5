@@ -1,4 +1,4 @@
-import { Controller, Body, Patch, Get, Query, Sse } from '@nestjs/common';
+import { Controller, Body, Patch, Get, Query, Sse, Param } from '@nestjs/common';
 import { CreateFavoriteDto } from './dtos/create.favorite.dto';
 import { EventEmitter2, OnEvent } from '@nestjs/event-emitter';
 import { Observable, fromEvent, interval, map } from 'rxjs';
@@ -9,7 +9,7 @@ import { FavoritesService } from './favorites.service';
 export class FavoritesController {
     constructor(private readonly favoritesService: FavoritesService,
         private readonly eventEmitter: EventEmitter2
-        ){}
+    ){}
 
     @Sse('categories')
     events(@Query('category') category_: string, @Query('userId') userId_: string) {
@@ -22,8 +22,8 @@ export class FavoritesController {
         return this.favoritesService.add(createFavoriteDto)
     }
 
-    @Get()
-    findAll(){
-        return this.favoritesService.findAll();
+    @Get(':id')
+    findAll(@Param('id') id: string){
+        return this.favoritesService.findAll(id);
     }
 }

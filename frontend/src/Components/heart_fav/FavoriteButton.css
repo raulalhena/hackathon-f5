@@ -1,4 +1,10 @@
 img {
     width: 3rem;
     height: 2.5rem;
+    margin-right: 0.7rem;
+    vertical-align: super;
+    position: relative;
+    top:.1em;
+    display: inline-block;
+
 }

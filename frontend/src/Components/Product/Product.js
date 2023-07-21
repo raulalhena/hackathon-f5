@@ -1,17 +1,22 @@
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./products.css";
 
-const Product = ({ product}) => {
-    const { name, image, price } = product;
-
-    return (
-
-        <div className="cards"> 
-        <Link to={`/products/${product.id}`}><img src={image} alt={name} /></Link>
-        <Link to={`/products/${product.id}`}><h2>{name}</h2></Link>
-        <p>${price}</p>
+export const Product = ({ image, name, price, id }) => {
+  return (
+    <div className="product-container">
+      <Link to={`/product/${id}`}>
+        <div className="product__img">
+          <img src={image} alt={name} />
         </div>
-
-    );
+      </Link>
+      <div className="product__details">
+        <h1>{name}</h1>
+        <p className="price">${price}</p>
+      </div>
+      <Link to={`/ProductDetail/${id}`} className="btn">
+        Ver Detalle
+      </Link>
+    </div>
+  );
 };
-
-export default Product;

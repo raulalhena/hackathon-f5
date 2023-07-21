@@ -1,16 +1,18 @@
-import React from 'react';
-import Cards from '../Components/Cards/Cards';
-import Prueba from "../Components/Prueba";
-
+import Footer from "../Components/Footer/Footer";
+import Header from "../Components/Header/Header";
+import FavoriteButton from "../Components/heart_fav/FavoriteButton";
+import './home.css'
 
 const Home = () => {
 
     return (
-        <div>
-            hola mundo
-            <Cards />
-            <Prueba />
+        <>
+        <div className="home">
+            <Header/>
+            <FavoriteButton/>
+            <Footer/>
         </div>
+        </>
     )
 }
 

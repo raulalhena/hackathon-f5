@@ -1,0 +1,6 @@
+card-section {
+    display: flex;
+    height: 50vh;
+    width: 80%;
+    border: 20px solid red;
+}

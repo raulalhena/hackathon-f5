@@ -1,7 +1,7 @@
 import Footer from "../Components/Footer/Footer";
 import Header from "../Components/Header/Header";
-import FavoriteButton from "../Components/heart_fav/FavoriteButton";
 import './home.css'
+import CardsSection from "../Components/Cards Section/CardsSection";
 
 const Home = () => {
 
@@ -9,7 +9,7 @@ const Home = () => {
         <>
         <div className="home">
             <Header/>
-            <FavoriteButton/>
+                <CardsSection />
             <Footer/>
         </div>
         </>

@@ -1,9 +1,10 @@
 import React, { useContext} from 'react';
 import { ProductContext } from '../../Data/ProductContext';
 import Product from '../Product/Product';
+import './cards.css';
 
 const Cards = () => {
-const {allProducts, filteredProducts} = useContext(ProductContext)
+    const {allProducts, filteredProducts} = useContext(ProductContext)
 
     return (
 
@@ -18,7 +19,7 @@ const {allProducts, filteredProducts} = useContext(ProductContext)
             ) :(
                 <>
                 {allProducts.map((product) => (
-                    <Product product={product} />
+                    <Product className='product-container' product={product} />
                 ))}
                 </>
             )

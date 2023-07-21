@@ -1,11 +1,9 @@
-import React, { useContext, useState} from 'react'
+import React, { useContext } from 'react'
 import { ProductContext } from '../../Data/ProductContext'
 
 
-function NotificationsBox({ }) {
+function NotificationsBox() {
 
-
-    // const [text, setText] = useState();
     const {notification} = useContext(ProductContext);
 
     console.log(notification);

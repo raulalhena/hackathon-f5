@@ -41,8 +41,8 @@ export const ProductProvider = ({ children }) => {
 
     const [notification, setNotification] = useState('');
 
-    const getFavoritesCategories = async () => {
-        const eventSource = new EventSource('http://localhost:4000/favorites/categories?category=Legumbres&userId=1');
+    const subscribeNotifications = async (category) => {
+        const eventSource = new EventSource(`http://localhost:4000/favorites/categories?category=Legumbres&userId=1`);
         console.log(eventSource);
          eventSource.onmessage = ({ data }) => {
              setNotification(data);
@@ -56,6 +56,16 @@ export const ProductProvider = ({ children }) => {
     useEffect(() => {
         getGlobalProducts();
     }, []);
+
+    const [favorites, setFavorites] = useState(false);
+
+    // const getFavorites = async (userId) => {
+    //     const response = await fetch('http://localhost:4000/favorites/1');
+    //     const result = await response.json();
+    //     const favorites = result.map(favorite => {
+    //         userId: 
+    //     });
+    // }
     
 
     const [filteredProducts, setfilteredProducts] = useState([]);
@@ -72,7 +82,7 @@ export const ProductProvider = ({ children }) => {
                 getProductsByID,
 
                 notification,
-                getFavoritesCategories,
+                subscribeNotifications 
             }}
         >
             {children}

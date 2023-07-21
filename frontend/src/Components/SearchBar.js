@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './SearchBar.css';
+import Product from './Product/Product';
+import Cards from './Cards/Cards';
 
 const SearchBar = () => {
   const [query, setQuery] = useState('');
@@ -44,10 +46,8 @@ const SearchBar = () => {
       <div className="resultsContainer">
         {results.length > 0 ? (
           <ul className="resultsList">
-            {results.map((result) => (
-              <li  className="resultItem">
-                {result.name}
-              </li>
+            {results.map((product) => (
+              <Product key={product._id} product={product} />
             ))}
           </ul>
         ) : (

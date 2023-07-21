@@ -6,14 +6,14 @@ import './FavoriteButton.css'
 
 const FavoriteButton = () => {
 
-    const {getFavoritesCategories} = useContext(ProductContext)
+    const {subscribeNotifications} = useContext(ProductContext)
 
 
     const [isFavorite, setIsFavorite] = useState(false);
 
-    const toggleFavorite = () => {
+    const toggleFavorite = ({ category }) => {
         if(!isFavorite) {
-            getFavoritesCategories();
+            subscribeNotifications(category);
         }
 
         setIsFavorite((prevIsFavorite) => !prevIsFavorite);

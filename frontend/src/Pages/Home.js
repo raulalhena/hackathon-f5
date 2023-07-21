@@ -2,6 +2,8 @@ import Footer from "../Components/Footer/Footer";
 import Header from "../Components/Header/Header";
 import './home.css'
 import CardsSection from "../Components/Cards Section/CardsSection";
+import SearchBar from "../Components/SearchBar";
+
 
 const Home = () => {
 
@@ -9,7 +11,8 @@ const Home = () => {
         <>
         <div className="home">
             <Header/>
-                <CardsSection />
+            <SearchBar />
+            <CardsSection />
             <Footer/>
         </div>
         </>

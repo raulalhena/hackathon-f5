@@ -19,7 +19,7 @@ const Cards = () => {
             ) :(
                 <>
                 {allProducts.map((product) => (
-                    <Product className='product-container' product={product} />
+                    <Product key={product._id} product={product} />
                 ))}
                 </>
             )

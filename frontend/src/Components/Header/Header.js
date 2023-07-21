@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './header.css';
 import logo from '../../assets/harvest.png';
+import NotificationsBox from '../NotificationsBox/NotificationsBox';
 
 const Logo = () => {
   return (
@@ -12,6 +13,7 @@ const Logo = () => {
     </Link>
   );
 };
+
 
 const Buttons = () => {
   return (
@@ -26,6 +28,7 @@ const Header = () => {
   return (
     <header className="header">
       <Logo />
+      <NotificationsBox />
       <Buttons />
     </header>
   );

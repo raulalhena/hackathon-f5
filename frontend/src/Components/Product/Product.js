@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ProductContext } from "../../Data/ProductContext";
 import "./products.css";
@@ -6,11 +6,8 @@ import FavoriteButton from "../heart_fav/FavoriteButton";
 
 const Product = ({ product }) => {
 
-  const { toggleFavorite } = useContext(ProductContext)
-
-  const handleHeartClick = async () => {
-
-  }
+  const [favorite, setFavorite] = useState();
+  
 
   console.log(product.image, product.price, product.name, product.id);
   return (
@@ -20,7 +17,7 @@ const Product = ({ product }) => {
           <img src={product.image} alt={product.name} />
         </div>
       </Link>
-      <div><FavoriteButton onClick={ handleHeartClick } /></div>
+      <div><FavoriteButton /></div>
       <div className="product__details">
         <h1>{product.name}</h1>
         <p className="price">${product.price}</p>

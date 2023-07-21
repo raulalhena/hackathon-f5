@@ -32,11 +32,25 @@ export const ProductProvider = ({ children }) => {
 
     const getProductsByID = async (id) => {
 
-    const baseURL = "http://localhost:4000/products"
-        const res = await fetch(`${baseURL}/${id}`)
-        const data = await res.json();
-        
-        return data
+        const baseURL = "http://localhost:4000/products"
+            const res = await fetch(`${baseURL}/${id}`)
+            const data = await res.json();
+            
+            return data
+    }
+
+    const [notification, setNotification] = useState('');
+
+    const getFavoritesCategories = async () => {
+        const eventSource = new EventSource('http://localhost:4000/favorites/categories?category=Legumbres&userId=1');
+        console.log(eventSource);
+         eventSource.onmessage = ({ data }) => {
+             setNotification(data);
+             console.log(data);
+             return () => {
+                 eventSource.close();
+             };
+         }
     }
 
     useEffect(() => {
@@ -56,6 +70,9 @@ export const ProductProvider = ({ children }) => {
                 
                 filteredProducts,
                 getProductsByID,
+
+                notification,
+                getFavoritesCategories,
             }}
         >
             {children}
